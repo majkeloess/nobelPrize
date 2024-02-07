@@ -60,7 +60,9 @@ export default function Selection() {
           </Select>
         </FormControl>
       </Box>
-      <Button variant="outlined">Check year</Button>
+      <Button variant="contained" sx={{ color: "black" }}>
+        Check awards
+      </Button>
     </ThemeProvider>
   );
 }
