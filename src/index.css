@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.text-gradient {
+  background: radial-gradient(ellipse at top left, var(--tw-gradient-stops));
+  -webkit-text-fill-color: transparent;
+}
+
+
