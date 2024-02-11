@@ -6,7 +6,9 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import Button from "@mui/material/Button";
+import getYear from "/src/apiRes.js";
 
+const yearsArr = await getYear();
 const theme = createTheme({
   palette: {
     primary: {
@@ -55,9 +57,9 @@ export default function Selection() {
               onChange={handleChange}
               sx={{ color: "#B7791F" }}
             >
-              <MenuItem value={1901}>1901</MenuItem>
-              <MenuItem value={1902}>1902</MenuItem>
-              <MenuItem value={1903}>1903</MenuItem>
+              {yearsArr.map((item: string) => (
+                <MenuItem value={Number(item)}>{item}</MenuItem>
+              ))}
             </Select>
           </FormControl>
         </Box>
