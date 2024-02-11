@@ -40,29 +40,31 @@ export default function Selection() {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <Box sx={{ maxWidth: 120, color: "#B7791F" }}>
-        <FormControl fullWidth>
-          <InputLabel sx={{ color: "#B7791F" }} id="demo-simple-select-label">
-            Year
-          </InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={age}
-            label="Age"
-            onChange={handleChange}
-            sx={{ color: "#B7791F" }}
-          >
-            <MenuItem value={1901}>1901</MenuItem>
-            <MenuItem value={1902}>1902</MenuItem>
-            <MenuItem value={1903}>1903</MenuItem>
-          </Select>
-        </FormControl>
-      </Box>
-      <Button variant="contained" sx={{ color: "black" }}>
-        Check awards
-      </Button>
-    </ThemeProvider>
+    <div className="flex flex-row gap-6 items-center">
+      <ThemeProvider theme={theme}>
+        <Box sx={{ width: 140, color: "#B7791F" }}>
+          <FormControl fullWidth>
+            <InputLabel sx={{ color: "#B7791F" }} id="demo-simple-select-label">
+              Year
+            </InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={age}
+              label="Age"
+              onChange={handleChange}
+              sx={{ color: "#B7791F" }}
+            >
+              <MenuItem value={1901}>1901</MenuItem>
+              <MenuItem value={1902}>1902</MenuItem>
+              <MenuItem value={1903}>1903</MenuItem>
+            </Select>
+          </FormControl>
+        </Box>
+        <Button variant="contained" sx={{ color: "black", height: 40 }}>
+          Check awards
+        </Button>
+      </ThemeProvider>
+    </div>
   );
 }

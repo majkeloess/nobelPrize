@@ -1,0 +1,243 @@
+[
+  {
+    "id": "160",
+    "knownName": {
+      "en": "Jacobus H. van 't Hoff",
+      "se": "Jacobus H. van 't Hoff"
+    },
+    "givenName": {
+      "en": "Jacobus H.",
+      "se": "Jacobus H."
+    },
+    "familyName": {
+      "en": "van 't Hoff",
+      "se": "van 't Hoff"
+    },
+    "fullName": {
+      "en": "Jacobus Henricus van 't Hoff",
+      "se": "Jacobus Henricus van 't Hoff"
+    },
+    "fileName": "hoff",
+    "gender": "male",
+    "birth": {
+      "date": "1852-08-30",
+      "place": {
+        "city": {
+          "en": "Rotterdam",
+          "no": "Rotterdam",
+          "se": "Rotterdam"
+        },
+        "country": {
+          "en": "the Netherlands",
+          "no": "Nederland",
+          "se": "Nederländerna"
+        },
+        "cityNow": {
+          "en": "Rotterdam",
+          "no": "Rotterdam",
+          "se": "Rotterdam",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q34370",
+            "https://www.wikipedia.org/wiki/Rotterdam"
+          ],
+          "latitude": "51.925205",
+          "longitude": "4.489110"
+        },
+        "countryNow": {
+          "en": "the Netherlands",
+          "no": "Nederland",
+          "se": "Nederländerna",
+          "sameAs": ["https://www.wikidata.org/wiki/Q55"],
+          "latitude": "52.316667",
+          "longitude": "5.550000"
+        },
+        "continent": {
+          "en": "Europe",
+          "no": "Europa",
+          "se": "Europa"
+        },
+        "locationString": {
+          "en": "Rotterdam, the Netherlands",
+          "no": "Rotterdam, Nederland",
+          "se": "Rotterdam, Nederländerna"
+        }
+      }
+    },
+    "death": {
+      "date": "1911-03-01",
+      "place": {
+        "city": {
+          "en": "Berlin",
+          "no": "Berlin",
+          "se": "Berlin"
+        },
+        "country": {
+          "en": "Germany",
+          "no": "Tyskland",
+          "se": "Tyskland",
+          "sameAs": "https://www.wikidata.org/wiki/Q183"
+        },
+        "cityNow": {
+          "en": "Berlin",
+          "no": "Berlin",
+          "se": "Berlin",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q64",
+            "https://www.wikipedia.org/wiki/Berlin"
+          ],
+          "latitude": "52.522265",
+          "longitude": "13.406852"
+        },
+        "countryNow": {
+          "en": "Germany",
+          "no": "Tyskland",
+          "se": "Tyskland",
+          "sameAs": ["https://www.wikidata.org/wiki/Q183"],
+          "latitude": "51.000000",
+          "longitude": "10.000000"
+        },
+        "continent": {
+          "en": "Europe",
+          "no": "Europa",
+          "se": "Europa"
+        },
+        "locationString": {
+          "en": "Berlin, Germany",
+          "no": "Berlin, Tyskland",
+          "se": "Berlin, Tyskland"
+        }
+      }
+    },
+    "wikipedia": {
+      "slug": "Jacobus_Henricus_van_'t_Hoff",
+      "english": "https://en.wikipedia.org/wiki/Jacobus_Henricus_van_'t_Hoff"
+    },
+    "wikidata": {
+      "id": "Q102822",
+      "url": "https://www.wikidata.org/wiki/Q102822"
+    },
+    "sameAs": [
+      "https://www.wikidata.org/wiki/Q102822",
+      "https://en.wikipedia.org/wiki/Jacobus_Henricus_van_'t_Hoff"
+    ],
+    "links": [
+      {
+        "rel": "laureate",
+        "href": "https://api.nobelprize.org/2/laureate/160",
+        "action": "GET",
+        "types": "application/json"
+      },
+      {
+        "rel": "external",
+        "href": "https://www.nobelprize.org/laureate/160",
+        "title": "Jacobus H. van 't Hoff - Facts",
+        "action": "GET",
+        "types": "text/html",
+        "class": ["laureate facts"]
+      }
+    ],
+    "nobelPrizes": [
+      {
+        "awardYear": "1901",
+        "category": {
+          "en": "Chemistry",
+          "no": "Kjemi",
+          "se": "Kemi"
+        },
+        "categoryFullName": {
+          "en": "The Nobel Prize in Chemistry",
+          "no": "Nobelprisen i kjemi",
+          "se": "Nobelpriset i kemi"
+        },
+        "sortOrder": "1",
+        "portion": "1",
+        "dateAwarded": "1901-11-12",
+        "prizeStatus": "received",
+        "motivation": {
+          "en": "in recognition of the extraordinary services he has rendered by the discovery of the laws of chemical dynamics and osmotic pressure in solutions",
+          "se": "såsom ett erkännande av den utomordentliga förtjänst han inlagt genom upptäckten av lagarna för den kemiska dynamiken och för det osmotiska trycket i lösningar"
+        },
+        "prizeAmount": 150782,
+        "prizeAmountAdjusted": 9704878,
+        "affiliations": [
+          {
+            "name": {
+              "en": "Berlin University",
+              "no": "Berlin University",
+              "se": "Berlin University"
+            },
+            "nameNow": {
+              "en": "Berlin University"
+            },
+            "city": {
+              "en": "Berlin",
+              "no": "Berlin",
+              "se": "Berlin"
+            },
+            "country": {
+              "en": "Germany",
+              "no": "Tyskland",
+              "se": "Tyskland"
+            },
+            "cityNow": {
+              "en": "Berlin",
+              "no": "Berlin",
+              "se": "Berlin",
+              "sameAs": [
+                "https://www.wikidata.org/wiki/Q64",
+                "https://www.wikipedia.org/wiki/Berlin"
+              ],
+              "latitude": "52.522265",
+              "longitude": "13.406852"
+            },
+            "countryNow": {
+              "en": "Germany",
+              "no": "Tyskland",
+              "se": "Tyskland",
+              "sameAs": ["https://www.wikidata.org/wiki/Q183"],
+              "latitude": "51.000000",
+              "longitude": "10.000000"
+            },
+            "continent": {
+              "en": "Europe"
+            },
+            "locationString": {
+              "en": "Berlin, Germany",
+              "no": "Berlin, Tyskland",
+              "se": "Berlin, Tyskland"
+            }
+          }
+        ],
+        "links": [
+          {
+            "rel": "nobelPrize",
+            "href": "https://api.nobelprize.org/2/nobelPrize/che/1901",
+            "action": "GET",
+            "types": "application/json"
+          },
+          {
+            "rel": "external",
+            "href": "https://www.nobelprize.org/prizes/chemistry/1901/hoff/facts/",
+            "title": "Jacobus H. van 't Hoff - Facts",
+            "action": "GET",
+            "types": "text/html",
+            "class": ["laureate facts"]
+          },
+          {
+            "rel": "external",
+            "href": "https://www.nobelprize.org/prizes/chemistry/1901/summary/",
+            "title": "The Nobel Prize in Chemistry 1901",
+            "action": "GET",
+            "types": "text/html",
+            "class": ["prize summary"]
+          }
+        ]
+      }
+    ],
+    "meta": {
+      "terms": "https://www.nobelprize.org/about/terms-of-use-for-api-nobelprize-org-and-data-nobelprize-org/",
+      "license": "https://www.nobelprize.org/about/terms-of-use-for-api-nobelprize-org-and-data-nobelprize-org/#licence",
+      "disclaimer": "https://www.nobelprize.org/about/terms-of-use-for-api-nobelprize-org-and-data-nobelprize-org/#disclaimer"
+    }
+  }
+]
