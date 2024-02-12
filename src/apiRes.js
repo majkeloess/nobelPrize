@@ -72,6 +72,6 @@ export function prizeFormatter(value) {
 
 
 // console.log(await getYear());
-// console.log(await getData('1901'));
-//console.log(await getIdData(160));
-//console.log(prizeFormatter('1250000000')); //prizeFormatter('1200'), prizeFormatter('148500'), prizeFormatter('12500000'))
+console.log(await getData('1905'));
+console.log(await getIdData(164));
+//console.log(prizeFormatter('1250000000')); //prizeFormatter('1200'), prizeFormatter('148500'), prizeFormatter('12500000')) 

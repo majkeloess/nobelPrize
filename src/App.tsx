@@ -1,3 +1,4 @@
+import Img from "./Img";
 import Selection from "./Selection";
 
 function App(): JSX.Element {
@@ -9,11 +10,7 @@ function App(): JSX.Element {
           <p className="text-xl self-end">1901-1905</p>
         </div>
         <div className="flex flex-col gap-5 align-middle items-center justify-center ">
-          <img
-            className="w-[300px]"
-            src="https://res.cloudinary.com/dq5exroyd/image/upload/v1707568608/Nobel_Prize_s73it5.png"
-            alt=""
-          />
+          <Img />
           <Selection />
         </div>
       </div>
