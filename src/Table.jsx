@@ -1,50 +1,3 @@
-const rows = [
-  createData(
-    "Adolf von Baeyer",
-    "Chemistry",
-    "8 626 501",
-    "1835-10-31 Berlin, Prussia (now Germany)",
-    "1917-08-20 Starnberg, Germany",
-    {
-      wiki: "https://en.wikipedia.org/wiki/Adolf_von_Baeyer",
-      moreData: "https://www.nobelprize.org/laureate/164",
-    }
-  ),
-  createData(
-    "Adolf von Baeyer",
-    "Chemistry",
-    "8 626 501",
-    "1835-10-31 Berlin, Prussia (now Germany)",
-    "1917-08-20 Starnberg, Germany",
-    {
-      wiki: "https://en.wikipedia.org/wiki/Adolf_von_Baeyer",
-      moreData: "https://www.nobelprize.org/laureate/164",
-    }
-  ),
-  createData(
-    "Adolf von Baeyer",
-    "Chemistry",
-    "8 626 501",
-    "1835-10-31 Berlin, Prussia (now Germany)",
-    "1917-08-20 Starnberg, Germany",
-    {
-      wiki: "https://en.wikipedia.org/wiki/Adolf_von_Baeyer",
-      moreData: "https://www.nobelprize.org/laureate/164",
-    }
-  ),
-  createData(
-    "Adolf von Baeyer",
-    "Chemistry",
-    "8 626 501",
-    "1835-10-31 Berlin, Prussia (now Germany)",
-    "1917-08-20 Starnberg, Germany",
-    {
-      wiki: "https://en.wikipedia.org/wiki/Adolf_von_Baeyer",
-      moreData: "https://www.nobelprize.org/laureate/164",
-    }
-  ),
-];
-
 import * as React from "react";
 import { styled } from "@mui/system";
 import Table from "@mui/material/Table";
@@ -56,10 +9,12 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Wikipedia from "./Wikipedia";
 import Page from "./Page";
+import YearContext from "./Context";
+import { useContext } from "react";
 
 const StyledTableContainer = styled(TableContainer)(({ theme }) => ({
   backgroundColor: "#B7791F",
-  opacity: 0.8, // adjust this to make it more or less transparent
+  opacity: 0.8,
 }));
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -72,6 +27,12 @@ function createData(name, category, prize, birth, death, links) {
 }
 
 export default function BasicTable() {
+  const { data } = useContext(YearContext);
+
+  const rows = data.map((el) => {
+    createData(el.name, el.category, el.prize, el.birth, el.death, el.links);
+  });
+
   return (
     <StyledTableContainer component={Paper}>
       <Table sx={{ maxWidth: 1200 }} aria-label="simple table">

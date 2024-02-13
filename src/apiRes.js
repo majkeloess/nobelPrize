@@ -1,6 +1,6 @@
 const API = "https://api.nobelprize.org/2.1/nobelPrizes";
 
-export default async function getYear() {
+export async function getYear() {
   const data = await fetch(API);
   const res = await data.json();
   const arr = res.nobelPrizes;
@@ -24,12 +24,16 @@ export async function getData(year) {
   let j = 0;
   for (let i = 0; i < arr.length; i++) {
     if (arr[i].awardYear == year) {
+      const tempAsync = await getIdData(Number(arr[i].laureates[0].id))
       yearData.push({
         id: j,
         category: arr[i].category.en,
         prize: prizeFormatter(arr[i].prizeAmountAdjusted.toString()),
         name: arr[i].laureates[0].knownName.en,
         laureateId: arr[i].laureates[0].id,
+        birth: tempAsync.birth,
+        death: tempAsync.death,
+        links: { wiki: tempAsync.wiki, moreData: tempAsync.moreData }
       })
       j++;
     }
@@ -72,6 +76,6 @@ export function prizeFormatter(value) {
 
 
 // console.log(await getYear());
-console.log(await getData('1905'));
-console.log(await getIdData(164));
+//console.log(await getData('1905'));
+//console.log(await getIdData(164));
 //console.log(prizeFormatter('1250000000')); //prizeFormatter('1200'), prizeFormatter('148500'), prizeFormatter('12500000')) 
