@@ -26,12 +26,22 @@ function createData(name, category, prize, birth, death, links) {
   return { name, category, prize, birth, death, links };
 }
 
-export default function BasicTable() {
-  const { data } = useContext(YearContext);
+export default function BasicTable(props) {
+  const { data, setData, yearsArr } = useContext(YearContext);
 
-  const rows = data.map((el) => {
-    createData(el.name, el.category, el.prize, el.birth, el.death, el.links);
-  });
+  let rows = [];
+  if (data) {
+    rows = data.map((el) => {
+      return createData(
+        el.name,
+        el.category,
+        el.prize,
+        el.birth,
+        el.death,
+        el.links
+      );
+    });
+  }
 
   return (
     <StyledTableContainer component={Paper}>
