@@ -9,6 +9,7 @@ import Button from "@mui/material/Button";
 import { getData } from "./apiRes.js";
 import YearContext from "./Context.js";
 import { useNavigate } from "react-router-dom";
+import { useMutation } from "@tanstack/react-query";
 
 const theme = createTheme({
   palette: {
@@ -38,17 +39,23 @@ const theme = createTheme({
 export default function Selection() {
   const navigate = useNavigate();
   const [age, setAge] = useState("");
-  const { data, setData, yearsArr } = useContext(YearContext);
+  const { data, setData, years } = useContext(YearContext);
 
   const handleChange = (event: SelectChangeEvent) => {
     setAge(event.target.value as string);
   };
-  const handleButtonClick = async () => {
-    const res = await getData(age.toString());
-    console.log(res);
-    setData(res);
-    navigate(`/prize/${age}`);
+  const mutation = useMutation({
+    mutationFn: (age) => getData(age.toString()),
+    onSuccess: (data) => {
+      setData(data);
+      navigate(`/prize/${age}`);
+    },
+  });
+
+  const handleButtonClick = () => {
+    mutation.mutate(age);
   };
+
   return (
     <div className="flex flex-row gap-6 items-center">
       <ThemeProvider theme={theme}>
@@ -65,11 +72,12 @@ export default function Selection() {
               onChange={handleChange}
               sx={{ color: "#B7791F" }}
             >
-              {yearsArr.map((item: string) => (
-                <MenuItem key={item} value={Number(item)}>
-                  {item}
-                </MenuItem>
-              ))}
+              {years &&
+                years.map((item: string) => (
+                  <MenuItem key={item} value={Number(item)}>
+                    {item}
+                  </MenuItem>
+                ))}
             </Select>
           </FormControl>
         </Box>
