@@ -1,3 +1,4 @@
+import { SelectChangeEvent } from "@mui/material/Select";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import { useContext } from "react";
@@ -6,7 +7,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Button from "@mui/material/Button";
-import YearContext from "./Context.jsx";
+import YearContext from "./Context.tsx";
 import { useNavigate } from "react-router-dom";
 
 const theme = createTheme({
@@ -35,10 +36,17 @@ const theme = createTheme({
 });
 
 export default function Selection() {
-  const { age, setAge, years } = useContext(YearContext);
+  const yearContext = useContext<YearContextType | undefined>(YearContext);
+
+  if (!yearContext) {
+    throw new Error("YearContext is undefined");
+  }
+
   const navigate = useNavigate();
-  console.log(years);
-  const handleChange = (event) => {
+
+  const { age, setAge, years } = yearContext;
+
+  const handleChange = (event: SelectChangeEvent<string>) => {
     setAge(event.target.value);
   };
 

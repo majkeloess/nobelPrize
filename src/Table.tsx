@@ -1,4 +1,3 @@
-import * as React from "react";
 import { styled } from "@mui/system";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -7,37 +6,41 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import Wikipedia from "./Wikipedia";
-import Page from "./Page";
+import Wikipedia from "./Wikipedia.js";
+import Page from "./Page.js";
 import { getData } from "./apiRes.js";
 import { useQuery } from "@tanstack/react-query";
-import Loading from "./Loading.jsx";
+import Loading from "./Loading.js";
 
-const StyledTableContainer = styled(TableContainer)(({ theme }) => ({
+const StyledTableContainer = styled(TableContainer)(() => ({
   backgroundColor: "#B7791F",
   opacity: 0.8,
 }));
 
-const StyledTableCell = styled(TableCell)(({ theme }) => ({
+const StyledTableCell = styled(TableCell)(() => ({
   color: "black",
   borderBottom: "1px solid black",
 }));
 
-function createData(name, category, prize, birth, death, links) {
+function createData(
+  name: string,
+  category: string,
+  prize: string,
+  birth: string,
+  death: string,
+  links: { wiki: string; moreData: string }
+): Data {
   return { name, category, prize, birth, death, links };
 }
 
-export default function BasicTable(props) {
-  const {
-    data: dataQ,
-    isLoading,
-    error,
-  } = useQuery({
+export default function BasicTable(props: { year: string }) {
+  const { data: dataQ, isLoading } = useQuery<YearData[], Error>({
     queryKey: ["year", props.year],
     queryFn: () => getData(props.year),
   });
 
-  let rows = [];
+  let rows: Data[] = [];
+
   if (dataQ) {
     rows = dataQ.map((el) => {
       return createData(
@@ -55,6 +58,7 @@ export default function BasicTable(props) {
   } else {
     return (
       <StyledTableContainer component={Paper}>
+        {/* <Paper> */}
         <Table sx={{ maxWidth: 1200 }} aria-label="simple table">
           <TableHead>
             <TableRow>
@@ -95,6 +99,7 @@ export default function BasicTable(props) {
             ))}
           </TableBody>
         </Table>
+        {/* </Paper> */}
       </StyledTableContainer>
     );
   }

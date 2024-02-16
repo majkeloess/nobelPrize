@@ -1,11 +1,17 @@
-import Loading from "./Loading";
+import Loading from "./Loading.tsx";
 import { useContext, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import YearContext from "./Context";
 import { getYear } from "./apiRes";
 
 export default function DataFetcher() {
-  const { years, setYears } = useContext(YearContext);
+  const yearContext = useContext(YearContext);
+
+  if (!yearContext) {
+    throw new Error("DataFetcher must be used within a YearProvider");
+  }
+
+  const { setYears } = yearContext;
 
   const {
     data: yearsArr,
