@@ -1,17 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Footer from "./Footer";
 import Img from "./Img";
 import Selection from "./Selection";
 import YearContext from "./Context";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Year from "./Year";
-import {
-  QueryClient,
-  QueryClientProvider,
-  useQuery,
-} from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Logo from "./Logo";
 import DataFetcher from "./DataFetcher";
+import ErrorPage from "./ErrorPage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -45,6 +42,8 @@ function App() {
                   }
                 />
                 <Route path="/prize/:year" element={<Year />} />
+                <Route path="*" element={<ErrorPage />} />
+                <Route path="/error" element={<ErrorPage />} />
               </Routes>
               <Footer />
             </div>

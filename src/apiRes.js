@@ -24,16 +24,19 @@ export async function getData(year) {
   let j = 0;
   for (let i = 0; i < arr.length; i++) {
     if (arr[i].awardYear == year) {
-      const tempAsync = await getIdData(Number(arr[i].laureates[0].id))
+      const tempAsync = await getIdData(Number(arr[i].laureates[0]?.id))
       yearData.push({
         id: j,
-        category: arr[i].category.en,
-        prize: prizeFormatter(arr[i].prizeAmountAdjusted.toString()),
-        name: arr[i].laureates[0].knownName.en,
-        laureateId: arr[i].laureates[0].id,
-        birth: tempAsync.birth,
-        death: tempAsync.death,
-        links: { wiki: tempAsync.wiki, moreData: tempAsync.moreData }
+        category: arr[i]?.category?.en || "",
+        prize: prizeFormatter(arr[i]?.prizeAmountAdjusted?.toString() || ""),
+        name: arr[i]?.laureates[0]?.knownName?.en || "",
+        laureateId: arr[i]?.laureates[0]?.id || "",
+        birth: tempAsync?.birth || "",
+        death: tempAsync?.death || "",
+        links: {
+          wiki: tempAsync?.wiki || "",
+          moreData: tempAsync?.moreData || ""
+        }
       })
       j++;
     }
@@ -42,15 +45,20 @@ export async function getData(year) {
   return yearData;
 }
 
+
 async function getIdData(id) {
   const API = `https://api.nobelprize.org/2/laureate/${id}`
   const data = await fetch(API);
   const res = await data.json();
   const obj = {
-    birth: res[0].birth.date + ' ' + res[0].birth.place.locationString.en,
-    death: res[0].death.date + ' ' + res[0].death.place.locationString.en,
-    wiki: res[0].wikipedia.english,
-    moreData: `https://www.nobelprize.org/laureate/${id}`
+    birth: (res[0]?.birth?.date && res[0]?.birth?.place?.locationString?.en
+      ? res[0].birth.date + ' ' + res[0].birth.place.locationString.en
+      : ""),
+    death: (res[0]?.death?.date && res[0]?.death?.place?.locationString?.en
+      ? res[0].death.date + ' ' + res[0].death.place.locationString.en
+      : ""),
+    wiki: res[0]?.wikipedia?.english || "",
+    moreData: `https://www.nobelprize.org/laureate/${id}` || ""
   };
 
   return obj;
@@ -76,6 +84,6 @@ export function prizeFormatter(value) {
 
 
 // console.log(await getYear());
-//console.log(await getData('1905'));
+console.log(await getData('1904'));
 //console.log(await getIdData(164));
 //console.log(prizeFormatter('1250000000')); //prizeFormatter('1200'), prizeFormatter('148500'), prizeFormatter('12500000')) 

@@ -37,7 +37,7 @@ const theme = createTheme({
 export default function Selection() {
   const { age, setAge, years } = useContext(YearContext);
   const navigate = useNavigate();
-
+  console.log(years);
   const handleChange = (event) => {
     setAge(event.target.value);
   };

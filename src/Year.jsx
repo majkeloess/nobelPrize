@@ -1,8 +1,18 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import BasicTable from "./Table";
+import { useContext, useEffect } from "react";
+import YearContext from "./Context";
 
 export default function Year() {
+  const { years } = useContext(YearContext);
   const { year } = useParams();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!years.includes(year)) {
+      navigate("/error");
+    }
+  }, []);
 
   return (
     <div className="bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-black via-black to-yellow-600 h-screen w-screen overflow-hidden">
