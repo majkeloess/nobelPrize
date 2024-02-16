@@ -1,15 +1,13 @@
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
+import Select from "@mui/material/Select";
 import Button from "@mui/material/Button";
-import { getData } from "./apiRes.js";
-import YearContext from "./Context.js";
+import YearContext from "./Context.jsx";
 import { useNavigate } from "react-router-dom";
-import { useMutation } from "@tanstack/react-query";
 
 const theme = createTheme({
   palette: {
@@ -37,23 +35,15 @@ const theme = createTheme({
 });
 
 export default function Selection() {
+  const { age, setAge, years } = useContext(YearContext);
   const navigate = useNavigate();
-  const [age, setAge] = useState("");
-  const { data, setData, years } = useContext(YearContext);
 
-  const handleChange = (event: SelectChangeEvent) => {
-    setAge(event.target.value as string);
+  const handleChange = (event) => {
+    setAge(event.target.value);
   };
-  const mutation = useMutation({
-    mutationFn: (age) => getData(age.toString()),
-    onSuccess: (data) => {
-      setData(data);
-      navigate(`/prize/${age}`);
-    },
-  });
 
   const handleButtonClick = () => {
-    mutation.mutate(age);
+    navigate(`/prize/${age}`);
   };
 
   return (
@@ -73,7 +63,7 @@ export default function Selection() {
               sx={{ color: "#B7791F" }}
             >
               {years &&
-                years.map((item: string) => (
+                years.map((item) => (
                   <MenuItem key={item} value={Number(item)}>
                     {item}
                   </MenuItem>

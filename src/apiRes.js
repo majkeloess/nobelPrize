@@ -42,7 +42,7 @@ export async function getData(year) {
   return yearData;
 }
 
-export async function getIdData(id) {
+async function getIdData(id) {
   const API = `https://api.nobelprize.org/2/laureate/${id}`
   const data = await fetch(API);
   const res = await data.json();

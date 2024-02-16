@@ -12,7 +12,7 @@ export default function DataFetcher() {
     isLoading,
     error,
   } = useQuery({
-    queryKey: "years",
+    queryKey: ["years"],
     queryFn: getYear,
   });
 

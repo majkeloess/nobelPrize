@@ -23,21 +23,12 @@ const queryClient = new QueryClient({
 });
 
 function App() {
+  const [age, setAge] = useState("");
   const [years, setYears] = useState([]);
-  const [data, setData] = useState({
-    id: "",
-    category: "",
-    prize: "",
-    name: "",
-    laureateId: "",
-    birth: "",
-    death: "",
-    links: { wiki: "", moreData: "" },
-  });
 
   return (
     <QueryClientProvider client={queryClient}>
-      <YearContext.Provider value={{ data, setData, years, setYears }}>
+      <YearContext.Provider value={{ years, setYears, age, setAge }}>
         <BrowserRouter>
           <div className="bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-black via-black to-yellow-600 h-screen w-screen overflow-hidden">
             <div className="text-3xl text-gold text-yellow-600 h-screen w-screen">
