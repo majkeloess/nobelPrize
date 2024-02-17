@@ -19,8 +19,9 @@ git clone https://github.com/majkeloess/nobelPrize && cd nobelPrize && npm i && 
 - React Query
 
 ## Photos
-![image](https://github.com/majkeloess/nobelPrize/assets/118011581/be9f22ae-ad7c-4c89-b739-57e14d39dc70)
-![image](https://github.com/majkeloess/nobelPrize/assets/118011581/ed6f5a91-fe59-40e3-a30b-db51d7ccd04c)
+![image](https://github.com/majkeloess/nobelPrize/assets/118011581/ec608d3b-cfc8-4e47-bb17-efe3643109e3)
+![image](https://github.com/majkeloess/nobelPrize/assets/118011581/3463428e-fb49-4194-b73d-6f35f6a67d90)
+
 
 
 
