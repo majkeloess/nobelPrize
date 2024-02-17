@@ -51,7 +51,7 @@ export default function Selection() {
   };
 
   const handleButtonClick = () => {
-    navigate(`/prize/${age}`);
+    navigate(`/nobelPrize/prize/${age}`);
   };
 
   return (
