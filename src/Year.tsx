@@ -1,6 +1,6 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import BasicTable from "./Table";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import YearContext from "./Context";
 
 export default function Year() {
@@ -10,16 +10,16 @@ export default function Year() {
     throw new Error("Error in Year el");
   }
 
-  const { years } = yearContext;
+  // const { years } = yearContext;
 
   const { year } = useParams<{ year: string }>();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  useEffect(() => {
-    if (year && !years.includes(year)) {
-      navigate("/error");
-    }
-  }, [year, years, navigate]);
+  // useEffect(() => {
+  //   if (year && !years.includes(year)) {
+  //     navigate("/error");
+  //   }
+  // }, [year, years, navigate]);
 
   return (
     <div className="bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-black via-black to-yellow-600 h-screen w-screen overflow-hidden">

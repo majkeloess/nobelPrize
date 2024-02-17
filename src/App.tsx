@@ -8,7 +8,7 @@ import Year from "./Year.tsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Logo from "./Logo.tsx";
 import DataFetcher from "./DataFetcher.tsx";
-import ErrorPage from "./ErrorPage.tsx";
+// import ErrorPage from "./ErrorPage.tsx";
 
 interface QueryClientOptions {
   defaultOptions: {
@@ -54,9 +54,9 @@ function App() {
                     </div>
                   }
                 />
-                <Route path="/prize/:year" element={<Year />} />
-                <Route path="*" element={<ErrorPage />} />
-                <Route path="/error" element={<ErrorPage />} />
+                <Route path="/nobelPrize/prize/:year" element={<Year />} />
+                {/* <Route path="*" element={<ErrorPage />} />
+                <Route path="/error" element={<ErrorPage />} /> */}
               </Routes>
               <Footer />
             </div>
