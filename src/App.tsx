@@ -46,7 +46,7 @@ function App() {
               <DataFetcher />
               <Routes>
                 <Route
-                  path="/nobelPrize/"
+                  path="/nobelPrize"
                   element={
                     <div className="flex flex-col gap-5 align-middle items-center justify-center ">
                       <Img />
