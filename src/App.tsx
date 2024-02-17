@@ -46,7 +46,7 @@ function App() {
               <DataFetcher />
               <Routes>
                 <Route
-                  path="/"
+                  path="/nobelPrize/"
                   element={
                     <div className="flex flex-col gap-5 align-middle items-center justify-center ">
                       <Img />
@@ -55,6 +55,7 @@ function App() {
                   }
                 />
                 <Route path="/nobelPrize/prize/:year" element={<Year />} />
+
                 {/* <Route path="*" element={<ErrorPage />} />
                 <Route path="/error" element={<ErrorPage />} /> */}
               </Routes>
