@@ -26,7 +26,7 @@ export default function Year() {
       <div className="text-3xl text-gold text-yellow-600 h-screen w-screen">
         <div className="font-medium text-5xl text-center mb-3">{year}</div>
         <div className="flex justify-center items-center">
-          <div className="w-[1200px]">
+          <div className="w-[1000px]">
             {year ? <BasicTable year={year} /> : null}
           </div>
         </div>

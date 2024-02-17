@@ -15,11 +15,15 @@ import Loading from "./Loading.js";
 const StyledTableContainer = styled(TableContainer)(() => ({
   backgroundColor: "#B7791F",
   opacity: 0.8,
+  borderRadius: 20,
 }));
 
 const StyledTableCell = styled(TableCell)(() => ({
   color: "black",
   borderBottom: "1px solid black",
+}));
+const StyledPaper = styled(Paper)(() => ({
+  backgroundColor: "transparent",
 }));
 
 function createData(
@@ -57,49 +61,51 @@ export default function BasicTable(props: { year: string }) {
     return <Loading />;
   } else {
     return (
-      <StyledTableContainer component={Paper}>
-        {/* <Paper> */}
-        <Table sx={{ maxWidth: 1200 }} aria-label="simple table">
-          <TableHead>
-            <TableRow>
-              <StyledTableCell>Name</StyledTableCell>
-              <StyledTableCell align="center">Category</StyledTableCell>
-              <StyledTableCell align="center">Prize</StyledTableCell>
-              <StyledTableCell align="center">Birth</StyledTableCell>
-              <StyledTableCell align="center">Death</StyledTableCell>
-              <StyledTableCell align="center">Links</StyledTableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows.map((row) => (
-              <TableRow
-                key={row.name}
-                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-              >
-                <StyledTableCell component="th" scope="row">
-                  {row.name}
-                </StyledTableCell>
-                <StyledTableCell align="center">{row.category}</StyledTableCell>
-                <StyledTableCell align="center">
-                  {row.prize} kr (SEK)
-                </StyledTableCell>
-                <StyledTableCell align="center">{row.birth}</StyledTableCell>
-                <StyledTableCell align="center">{row.death}</StyledTableCell>
-                <StyledTableCell align="center">
-                  <div className="flex flex-row items-center justify-center gap-3">
-                    <a href={row.links.wiki} target="_blank">
-                      <Wikipedia />
-                    </a>
-                    <a href={row.links.moreData} target="_blank">
-                      <Page />
-                    </a>
-                  </div>
-                </StyledTableCell>
+      <StyledTableContainer>
+        <StyledPaper>
+          <Table sx={{ maxWidth: 1000 }} aria-label="simple table">
+            <TableHead>
+              <TableRow>
+                <StyledTableCell>Name</StyledTableCell>
+                <StyledTableCell align="center">Category</StyledTableCell>
+                <StyledTableCell align="center">Prize</StyledTableCell>
+                <StyledTableCell align="center">Birth</StyledTableCell>
+                <StyledTableCell align="center">Death</StyledTableCell>
+                <StyledTableCell align="center">Links</StyledTableCell>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-        {/* </Paper> */}
+            </TableHead>
+            <TableBody>
+              {rows.map((row) => (
+                <TableRow
+                  key={row.name}
+                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                >
+                  <StyledTableCell component="th" scope="row">
+                    {row.name}
+                  </StyledTableCell>
+                  <StyledTableCell align="center">
+                    {row.category}
+                  </StyledTableCell>
+                  <StyledTableCell align="center">
+                    {row.prize} kr (SEK)
+                  </StyledTableCell>
+                  <StyledTableCell align="center">{row.birth}</StyledTableCell>
+                  <StyledTableCell align="center">{row.death}</StyledTableCell>
+                  <StyledTableCell align="center">
+                    <div className="flex flex-row items-center justify-center gap-3">
+                      <a href={row.links.wiki} target="_blank">
+                        <Wikipedia />
+                      </a>
+                      <a href={row.links.moreData} target="_blank">
+                        <Page />
+                      </a>
+                    </div>
+                  </StyledTableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </StyledPaper>
       </StyledTableContainer>
     );
   }
